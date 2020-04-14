@@ -62,7 +62,7 @@
         for (let i = 0; i < maxPredictions; i++) {
             if(prediction[i].probability.toFixed(2) >= 0.51){
                 const classPrediction =
-                 prediction[i].probability.toFixed(2)*100 +"퍼센트의 확률로"+prediction[i].className + "으로 예상됩니다." ;
+                 prediction[i].probability.toFixed(2)*100 +"      퍼센트의 확률로    "+prediction[i].className + "    으로 예상됩니다." ;
                 labelContainer.childNodes[0].innerHTML = classPrediction;
             }
             
