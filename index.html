@@ -60,9 +60,12 @@
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+            if(prediction[i].probability.toFixed(2) >= 0.51){
+                const classPrediction =
+                 prediction[i].probability.toFixed(2)*100 +"퍼센트의 확률로"+prediction[i].className + "으로 예상됩니다." ;
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+            }
+            
         }
     }
 </script>
